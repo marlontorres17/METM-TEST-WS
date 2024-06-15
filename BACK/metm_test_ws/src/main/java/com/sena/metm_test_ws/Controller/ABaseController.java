@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.sena.metm_test_ws.DTO.ApiResponseDto;
 import com.sena.metm_test_ws.Entity.ABaseEntity;
 import com.sena.metm_test_ws.IService.IBaseService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 public class ABaseController <T extends ABaseEntity, S extends IBaseService<T>> {
     

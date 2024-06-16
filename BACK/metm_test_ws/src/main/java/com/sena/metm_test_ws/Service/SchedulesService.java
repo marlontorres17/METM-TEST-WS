@@ -1,7 +1,5 @@
 package com.sena.metm_test_ws.Service;
 
-import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,10 +18,6 @@ public class SchedulesService extends ABaseService <Schedules> implements ISched
     @Override
     protected IBaseRepository <Schedules, Long> getRepository(){
         return repository;
-    }
-    @Override
-    public List<Schedules> findSchedulesByDateAndRoute(Date date, Long departureAirportId, Long arrivalAirportId) {
-        return repository.findSchedulesByDateAndRoute(date, departureAirportId, arrivalAirportId);
     }
 
     

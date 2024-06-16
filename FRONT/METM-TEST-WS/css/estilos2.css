@@ -4,3 +4,8 @@ body {
 .card {
     margin-top: 20px;
 }
+.card-header{
+    background-color: #3e89d4;
+
+
+}

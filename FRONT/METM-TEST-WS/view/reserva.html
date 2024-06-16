@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmación de la reserva</title>
+    <title>reserva</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilos2.css">
 </head>
@@ -69,8 +69,6 @@
                                 <option selected>Colombia</option>
                                 <option selected>Mexico</option>
                                 <option selected>Alemania</option>
-
-
                             </select>
                         </div>
                         <div class="form-group col-md-4">
@@ -106,16 +104,7 @@
                         </tr>
                     </thead>
                     <tbody id="listaPasajeros">
-                        <tr>
-                            <td>Aleik</td>
-                            <td>Hafezi</td>
-                            <td>11-05-1994</td>
-                            <td>3695005740</td>
-                            <td>Colombia</td>
-                            <td>023457689</td>
-                            <td><button class="btn btn-info btn-sm verPasaporte">Ver pasaporte</button></td>
-                            <td><button class="btn btn-danger btn-sm eliminarPasajero">Eliminar Pasajero</button></td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -150,7 +139,27 @@
     </div>
 </div>
 
-<!-- reservA -->
+<!-- vboleto -->
+
+<div class="modal fade" id="modalMensajeBoleto" tabindex="-1" aria-labelledby="modalMensajeBoletoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalMensajeBoletoLabel">¡Boleto emitido!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Su boleto ha sido emitido correctamente. ¡Buen viaje!</p>
+                <p>Número de boleto: <span id="numeroBoletoGenerado"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal fade" id="modalFacturacion" tabindex="-1" aria-labelledby="modalFacturacionLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -163,35 +172,37 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label><strong>Valor Total:</strong> [ $ 478926 ]</label>
+                    <label><strong>
+                        Valor Total:</strong> $478926</label>
+                    </div>
+                    <div class="form-group">
+                        <label><strong>Pagar con:</strong></label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="metodoPago" id="tarjetaCredito" value="Tarjeta de Crédito" checked>
+                            <label class="form-check-label" for="tarjetaCredito">Tarjeta de Crédito</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="metodoPago" id="efectivo" value="Efectivo">
+                            <label class="form-check-label" for="efectivo">Efectivo</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="metodoPago" id="comprobantePago" value="Comprobante de pago">
+                            <label class="form-check-label" for="comprobantePago">Comprobante de pago</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label><strong>Pagar con:</strong></label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="metodoPago" id="tarjetaCredito" value="Tarjeta de Crédito" checked>
-                        <label class="form-check-label" for="tarjetaCredito">Tarjeta de Crédito</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="metodoPago" id="efectivo" value="Efectivo">
-                        <label class="form-check-label" for="efectivo">Efectivo</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="metodoPago" id="comprobantePago" value="Comprobante de pago">
-                        <label class="form-check-label" for="comprobantePago">Comprobante de pago</label>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="emitirBoletos">Emitir boletos</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Emitir boletos</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../js/reserva.js"></script>
-</body>
-</html>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/reserva.js"></script>
+    </body>
+    </html>
+    

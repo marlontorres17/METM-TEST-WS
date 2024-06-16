@@ -25,6 +25,7 @@ document.getElementById('agregarPasajero').addEventListener('click', function() 
             <td>${numeroPasaporte}</td>
             <td>${paisPasaporte}</td>
             <td>${telefono}</td>
+            <td><img src="${fotoSrc}" class="img-fluid img-thumbnail"></td>
             <td><button class="btn btn-info btn-sm verPasaporte">Ver pasaporte</button></td>
             <td><button class="btn btn-danger btn-sm eliminarPasajero">Eliminar Pasajero</button></td>
         `;
@@ -50,6 +51,14 @@ document.getElementById('agregarPasajero').addEventListener('click', function() 
 
 document.getElementById('confirmarReserva').addEventListener('click', function() {
     $('#modalFacturacion').modal('show');
+});
+
+document.getElementById('emitirBoletos').addEventListener('click', function() {
+    $('#modalFacturacion').modal('hide');
+    $('#modalMensajeBoleto').modal('show');
+    // Generar un número de boleto ficticio (puedes usar una lógica más compleja aquí)
+    const numeroBoleto = Math.floor(Math.random() * 100) + 1;
+    document.getElementById('numeroBoletoGenerado').innerText = numeroBoleto;
 });
 
 document.querySelectorAll('.verPasaporte').forEach(function(button) {

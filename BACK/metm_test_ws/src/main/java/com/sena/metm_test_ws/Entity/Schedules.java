@@ -22,8 +22,10 @@ public class Schedules extends ABaseEntity  {
     @Column(name = "economy_price", scale = 2, precision = 10, nullable = false)
     private BigDecimal economyPrice;
 
-    @Column(name = "confrimed", length = 20, nullable = false)
-    private String confrimed;
+    @Column(name = "confirmed", length = 20, nullable = false)
+    private String confirmed;
+
+    
 
     @Column(name = "flight_number", length = 20, nullable = false)
     private String flightNumber;
@@ -60,14 +62,15 @@ public class Schedules extends ABaseEntity  {
         this.economyPrice = economyPrice;
     }
 
-    public String getConfrimed() {
-        return confrimed;
+    public String getConfirmed() {
+        return confirmed;
     }
 
-    public void setConfrimed(String confrimed) {
-        this.confrimed = confrimed;
+    public void setConfirmed(String confirmed) {
+        this.confirmed = confirmed;
     }
 
+    
     public String getFlightNumber() {
         return flightNumber;
     }

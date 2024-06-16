@@ -18,10 +18,10 @@
                 <h5>Detalles del vuelo de salida</h5>
                 <div class="border p-3">
                     <div class="row">
-                        <div class="col-md-3"><strong>Origen:</strong> CAI</div>
-                        <div class="col-md-3"><strong>Destino:</strong> AUH</div>
+                        <div class="col-md-3"><strong>Origen:</strong> Colombia</div>
+                        <div class="col-md-3"><strong>Destino:</strong> Alemania</div>
                         <div class="col-md-3"><strong>Tipo de cabina:</strong> Económica</div>
-                        <div class="col-md-3"><strong>Fecha:</strong> 11/10/17</div>
+                        <div class="col-md-3"><strong>Fecha:</strong> 06/10/25</div>
                         <div class="col-md-3"><strong>Número de vuelo:</strong> 1908</div>
                     </div>
                 </div>
@@ -31,10 +31,10 @@
                 <h5>Detalles del vuelo de regreso</h5>
                 <div class="border p-3">
                     <div class="row">
-                        <div class="col-md-3"><strong>Origen:</strong> AUH</div>
-                        <div class="col-md-3"><strong>Destino:</strong> CAI</div>
+                        <div class="col-md-3"><strong>Origen:</strong> Alemania</div>
+                        <div class="col-md-3"><strong>Destino:</strong> Colombia</div>
                         <div class="col-md-3"><strong>Tipo de cabina:</strong> Económica</div>
-                        <div class="col-md-3"><strong>Fecha:</strong> 11/15/17</div>
+                        <div class="col-md-3"><strong>Fecha:</strong> 06/16/24</div>
                         <div class="col-md-3"><strong>Número de vuelo:</strong> 1907</div>
                     </div>
                 </div>
@@ -66,7 +66,11 @@
                             <label for="paisPasaporte">País de pasaporte</label>
                             <select class="form-control" id="paisPasaporte">
                                 <option value="" disabled selected>Seleccione</option>
-                                <!-- Add options here -->
+                                <option selected>Colombia</option>
+                                <option selected>Mexico</option>
+                                <option selected>Alemania</option>
+
+
                             </select>
                         </div>
                         <div class="form-group col-md-4">
@@ -107,12 +111,12 @@
                             <td>Hafezi</td>
                             <td>11-05-1994</td>
                             <td>3695005740</td>
-                            <td>Bahrain</td>
-                            <td>+573023457689</td>
+                            <td>Colombia</td>
+                            <td>023457689</td>
                             <td><button class="btn btn-info btn-sm verPasaporte">Ver pasaporte</button></td>
                             <td><button class="btn btn-danger btn-sm eliminarPasajero">Eliminar Pasajero</button></td>
                         </tr>
-                        <!-- More rows can be added dynamically -->
+                        
                     </tbody>
                 </table>
             </div>
@@ -125,7 +129,7 @@
     </div>
 </div>
 
-<!-- Modal Ver Pasaporte -->
+<!-- pasaporte -->
 <div class="modal fade" id="modalPasaporte" tabindex="-1" aria-labelledby="modalPasaporteLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -146,7 +150,8 @@
     </div>
 </div>
 
-<!-- Modal Confirmación de Facturación -->
+<!-- reservA -->
+
 <div class="modal fade" id="modalFacturacion" tabindex="-1" aria-labelledby="modalFacturacionLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -158,7 +163,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label><strong>Valor Total:</strong> [ $ xxxxxxxx ]</label>
+                    <label><strong>Valor Total:</strong> [ $ 478926 ]</label>
                 </div>
                 <div class="form-group">
                     <label><strong>Pagar con:</strong></label>
@@ -187,6 +192,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../js/indexprueba2.js"></script>
+<script src="../js/reserva.js"></script>
 </body>
 </html>

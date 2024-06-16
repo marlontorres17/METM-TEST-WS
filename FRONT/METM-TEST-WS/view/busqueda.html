@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Búsqueda de Vuelos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/busqueda.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="border p-3 mb-4">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="destino">Origen</label>
+                    <select id="destino" class="form-control">
+                        <option selected>AUH</option>
+                        <option selected>El dorado</option>
+                        <option selected>inca</option>
+
+
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="destino">Destino</label>
+                    <select id="destino" class="form-control">
+                        <option selected>AUH</option>
+                        <option selected>El dorado</option>
+                        <option selected>inca</option>
+
+
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="cabina">Tipo de Cabina</label>
+                    <select id="cabina" class="form-control">
+                        <option selected>Economy</option>
+                        <option selected>Bussines</option>
+
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="tipo">Tipo</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipo" id="retorno" checked>
+                        <label class="form-check-label" for="retorno">
+                            Retorno
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipo" id="solo-ida">
+                        <label class="form-check-label" for="solo-ida">
+                            Solo ida
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="fecha-salida">Fecha Salida</label>
+                    <input type="date" class="form-control" id="fecha-salida" value="2016-10-11">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="fecha-regreso">Fecha Regreso</label>
+                    <input type="date" class="form-control" id="fecha-regreso" value="2016-10-11">
+                </div>
+                <div class="form-group col-md-2 align-self-end">
+                    <button type="submit" class="btn btn-primary">Aplicar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="border p-3 mb-4">
+        <h5 class="mt-4">Detalle de vuelos de salida:</h5>
+        <div class="form-check mb-2">
+            <input type="checkbox" class="form-check-input" id="salida-visualizacion">
+            <label class="form-check-label" for="salida-visualizacion">Visualización tres días antes y después</label>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Número de Vuelo</th>
+                <th>Precio de Cabina</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>AUH</td>
+                <td>CAI</td>
+                <td>11/10/2016</td>
+                <td>8:15</td>
+                <td>[XXXX]</td>
+                <td>$405</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="border p-3 mb-4">
+        <h5 class="mt-4">Detalle de vuelos de regreso:</h5>
+        <div class="form-check mb-2">
+            <input type="checkbox" class="form-check-input" id="regreso-visualizacion" checked>
+            <label class="form-check-label" for="regreso-visualizacion">Visualización tres días antes y después</label>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Número de Vuelo</th>
+                <th>Precio de Cabina</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>CAI</td>
+                <td>AUH</td>
+                <td>12/10/2016</td>
+                <td>8:15</td>
+                <td>[XXXX]</td>
+                <td>$420</td>
+            </tr>
+            <tr>
+                <td>CAI</td>
+                <td>AUH</td>
+                <td>13/10/2016</td>
+                <td>16:15</td>
+                <td>[XXXX]</td>
+                <td>$350</td>
+            </tr>
+            <tr>
+                <td>CAI</td>
+                <td>AUH</td>
+                <td>15/10/2016</td>
+                <td>11:45</td>
+                <td>[XXXX]</td>
+                <td>$420</td>
+            </tr>
+            <tr>
+                <td>CAI</td>
+                <td>AUH</td>
+                <td>16/10/2016</td>
+                <td>16:15</td>
+                <td>[XXXX]</td>
+                <td>$350</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="border p-3 mb-4">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="pasajeros">Pasajeros</label>
+                    <input type="text" class="form-control" id="pasajeros" placeholder="[xxx]">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Reservar Vuelo</button>
+            <button type="button" class="btn btn-secondary">Salir</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+<script>
+    loadAirports();
+    </script>
+</html>

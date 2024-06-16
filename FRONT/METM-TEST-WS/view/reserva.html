@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de la reserva</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos2.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4>Confirmación de la reserva</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <h5>Detalles del vuelo de salida</h5>
+                <div class="border p-3">
+                    <div class="row">
+                        <div class="col-md-3"><strong>Origen:</strong> CAI</div>
+                        <div class="col-md-3"><strong>Destino:</strong> AUH</div>
+                        <div class="col-md-3"><strong>Tipo de cabina:</strong> Económica</div>
+                        <div class="col-md-3"><strong>Fecha:</strong> 11/10/17</div>
+                        <div class="col-md-3"><strong>Número de vuelo:</strong> 1908</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>Detalles del vuelo de regreso</h5>
+                <div class="border p-3">
+                    <div class="row">
+                        <div class="col-md-3"><strong>Origen:</strong> AUH</div>
+                        <div class="col-md-3"><strong>Destino:</strong> CAI</div>
+                        <div class="col-md-3"><strong>Tipo de cabina:</strong> Económica</div>
+                        <div class="col-md-3"><strong>Fecha:</strong> 11/15/17</div>
+                        <div class="col-md-3"><strong>Número de vuelo:</strong> 1907</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>Datos del pasajero</h5>
+                <form id="passengerForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="nombres">Nombres</label>
+                            <input type="text" class="form-control" id="nombres">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="fechaNacimiento">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimiento">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="numeroPasaporte">Número Pasaporte</label>
+                            <input type="text" class="form-control" id="numeroPasaporte">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="paisPasaporte">País de pasaporte</label>
+                            <select class="form-control" id="paisPasaporte">
+                                <option value="" disabled selected>Seleccione</option>
+                                <!-- Add options here -->
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="fotoPasaporte">Foto Pasaporte</label>
+                            <input type="file" class="form-control-file" id="fotoPasaporte">
+                        </div>
+                        <div class="form-group col-md-6 d-flex align-items-end">
+                            <button type="button" class="btn btn-primary" id="agregarPasajero">Agregar Pasajero</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="mb-3">
+                <h5>Lista de pasajeros</h5>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Fecha de nacimiento</th>
+                            <th>Número de pasaporte</th>
+                            <th>País de pasaporte</th>
+                            <th>Teléfono</th>
+                            <th>Foto Pasaporte</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaPasajeros">
+                        <tr>
+                            <td>Aleik</td>
+                            <td>Hafezi</td>
+                            <td>11-05-1994</td>
+                            <td>3695005740</td>
+                            <td>Bahrain</td>
+                            <td>+573023457689</td>
+                            <td><button class="btn btn-info btn-sm verPasaporte">Ver pasaporte</button></td>
+                            <td><button class="btn btn-danger btn-sm eliminarPasajero">Eliminar Pasajero</button></td>
+                        </tr>
+                        <!-- More rows can be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary">Regresar a buscar vuelos</button>
+                <button class="btn btn-success" id="confirmarReserva">Confirmar Reserva</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ver Pasaporte -->
+<div class="modal fade" id="modalPasaporte" tabindex="-1" aria-labelledby="modalPasaporteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalPasaporteLabel">Ver pasaporte</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Este pasaporte pertenece a: <span id="nombrePasajero"></span></p>
+                <img id="imagenPasaporte" src="#" alt="Foto del pasaporte" class="img-fluid">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Confirmación de Facturación -->
+<div class="modal fade" id="modalFacturacion" tabindex="-1" aria-labelledby="modalFacturacionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFacturacionLabel">Confirmación de Facturación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label><strong>Valor Total:</strong> [ $ xxxxxxxx ]</label>
+                </div>
+                <div class="form-group">
+                    <label><strong>Pagar con:</strong></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metodoPago" id="tarjetaCredito" value="Tarjeta de Crédito" checked>
+                        <label class="form-check-label" for="tarjetaCredito">Tarjeta de Crédito</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metodoPago" id="efectivo" value="Efectivo">
+                        <label class="form-check-label" for="efectivo">Efectivo</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metodoPago" id="comprobantePago" value="Comprobante de pago">
+                        <label class="form-check-label" for="comprobantePago">Comprobante de pago</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Emitir boletos</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../js/indexprueba2.js"></script>
+</body>
+</html>

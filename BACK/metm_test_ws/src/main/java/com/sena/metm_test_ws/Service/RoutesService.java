@@ -1,5 +1,7 @@
 package com.sena.metm_test_ws.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,10 @@ public class RoutesService extends ABaseService <Routes> implements IRoutesServi
         return repository;
     }
 
+    public List<Routes> OrigenAndDestino(String origen, String destino) {
+        return repository.findByOrigenAndDestino(origen, destino);
+    }
+
+   
     
 }

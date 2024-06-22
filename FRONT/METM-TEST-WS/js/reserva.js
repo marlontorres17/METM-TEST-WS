@@ -56,7 +56,7 @@ document.getElementById('confirmarReserva').addEventListener('click', function()
 document.getElementById('emitirBoletos').addEventListener('click', function() {
     $('#modalFacturacion').modal('hide');
     $('#modalMensajeBoleto').modal('show');
-    // Generar un número de boleto ficticio (puedes usar una lógica más compleja aquí)
+    // Generar un número 
     const numeroBoleto = Math.floor(Math.random() * 100) + 1;
     document.getElementById('numeroBoletoGenerado').innerText = numeroBoleto;
 });
